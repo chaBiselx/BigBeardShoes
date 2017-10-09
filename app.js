@@ -35,7 +35,7 @@ const userController = require('./controllers/user');
 const apiController = require('./controllers/api');
 const contactController = require('./controllers/contact');
 const shoesController = require('./controllers/shoes');
-
+const locationController = require('./controllers/location');
 /**
  * API keys and Passport configuration.
  */
@@ -140,8 +140,13 @@ app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userControl
 /**
 * BigBeardShoes routes
 */
+<<<<<<< HEAD
 app.get('/shoes', shoesController.getShoes);
 
+=======
+
+app.get('/location', locationController.getLocation);
+>>>>>>> New page for geolocation
 
 /**
  * API examples routes.
