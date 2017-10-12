@@ -3,12 +3,12 @@ function init(){
 var lat, lon, _zoom;
 
 
-
 	//default
 	lat = 46.92475 ;
 	lon = 2.0517 ;
 	_zoom = 6
 	var position_latlng = new google.maps.LatLng(lat, lon);
+
 
 	//options of the map
 	var options = {
@@ -101,4 +101,13 @@ function setEventMarker( oMarker, infowindow, text){
     	// affichage InfoWindow
     	infowindow.open( this.getMap(), this);
     });
+}
+
+
+function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+	infoWindow.setPosition(pos);
+	infoWindow.setContent(browserHasGeolocation ?
+												'Error: The Geolocation service failed.' :
+												'Error: Your browser doesn\'t support geolocation.');
+	infoWindow.open(map);
 }
