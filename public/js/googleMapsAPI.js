@@ -23,7 +23,7 @@ var lat, lon, _zoom;
 
 		//search the markup for insertion
     var map = new google.maps.Map(document.getElementById("ggmaps_map"), options);
-		
+
 
 
 
@@ -35,8 +35,6 @@ var tMarker = [
 		text : "Bienvenue dans le magasin au coeur du Mont-Blanc"
 	}
 ]
-
-
 		//add marker
 		// tMarker = array of
 		createMarker( tMarker, map);
@@ -62,7 +60,7 @@ function createMarker( tab, map){
       		map : map,
       		title : data.title,
       		animation: google.maps.Animation.DROP,
-      		icon : "pictures/marker.png"
+      		icon : "img/marker.png"
     	})
 
 		}
