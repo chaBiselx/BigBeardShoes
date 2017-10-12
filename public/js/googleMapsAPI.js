@@ -3,6 +3,7 @@ function init(){
 var lat, lon, _zoom;
 
 
+
 	//default
 	lat = 46.92475 ;
 	lon = 2.0517 ;
@@ -11,7 +12,7 @@ var lat, lon, _zoom;
 
 	//options of the map
 	var options = {
-        center: position_latlng,
+        center: position_latlng ,
         zoom: _zoom ,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         scrollwheel: true,
@@ -22,6 +23,7 @@ var lat, lon, _zoom;
 
 		//search the markup for insertion
     var map = new google.maps.Map(document.getElementById("ggmaps_map"), options);
+		
 
 
 
