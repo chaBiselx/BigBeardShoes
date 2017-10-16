@@ -5,7 +5,7 @@ function getLocation(){
 
 	            lat = position.coords.latitude ;
 	            lng = position.coords.longitude;
-							document.location.href="location?lat="+lat+"&lon="+lng
+							init(lat,lng);
 	          });
 
   } else {

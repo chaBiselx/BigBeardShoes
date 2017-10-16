@@ -1,5 +1,15 @@
 
-function init(){
+function init(pos_lat, pos_lng){
+
+	var pos = [
+		{
+			lat: pos_lat,
+			lng: pos_lng,
+		}
+	]
+
+
+
 var lat, lon, _zoom;
 
 
@@ -37,17 +47,26 @@ var tMarker = [
 ]
 		//add marker
 		// tMarker = array of
-		createMarker( tMarker, map);
+		createMarker( tMarker, map, pos);
 }
 
 
 
 
-function createMarker( tab, map){
+function createMarker( tab, map, pos){
   var oLatLng, oMarker, data;
   var i, nb = tab.length;
   var contenu = "";
   var infowindow;
+
+	//if (pos.lat != null || pos.lng != null){
+		oLatLng = new google.maps.LatLng( 44.05,4.5);//pos.lat, pos.lon);
+		oMarker = new google.maps.Marker({
+				position : oLatLng,
+				map : map,
+		})
+	//}
+
 
   for( i = 0; i < nb; i++){
     data = tab[i];
