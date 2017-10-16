@@ -1,19 +1,16 @@
 
 function init(pos_lat, pos_lng){
 
-	var pos = [
-		{
-			lat: pos_lat,
-			lng: pos_lng,
+	var pos = {
+			lat: pos_lat ,
+			lng: pos_lng
 		}
-	]
-
 
 
 var lat, lon, _zoom;
 
 
-	//default
+	//default center of france
 	lat = 46.92475 ;
 	lon = 2.0517 ;
 	_zoom = 6
@@ -58,14 +55,14 @@ function createMarker( tab, map, pos){
   var i, nb = tab.length;
   var contenu = "";
   var infowindow;
-
-	//if (pos.lat != null || pos.lng != null){
-		oLatLng = new google.maps.LatLng( 44.05,4.5);//pos.lat, pos.lon);
+alert(pos.lat); //undefined
+	if (pos.lat != undefined || pos.lng != undefined){
+		oLatLng = new google.maps.LatLng(pos.lat, pos.lng);
 		oMarker = new google.maps.Marker({
 				position : oLatLng,
 				map : map,
 		})
-	//}
+	}
 
 
   for( i = 0; i < nb; i++){

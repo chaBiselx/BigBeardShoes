@@ -1,11 +1,8 @@
 function getLocation(){
-	var lat,lng ;
 	if (navigator.geolocation) {
-	          navigator.geolocation.getCurrentPosition(function(position, lat , lng) {
+	          navigator.geolocation.getCurrentPosition(function(position) {
 
-	            lat = position.coords.latitude ;
-	            lng = position.coords.longitude;
-							init(lat,lng);
+							init(position.coords.latitude , position.coords.longitude);
 	          });
 
   } else {
