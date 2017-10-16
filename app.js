@@ -146,13 +146,10 @@ app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userControl
 /**
 * BigBeardShoes routes
 */
-<<<<<<< HEAD
-app.get('/shoes', shoesController.getShoes);
-
-=======
 
 app.get('/location', locationController.getLocation);
->>>>>>> New page for geolocation
+app.get('/shoes', shoesController.getShoes);
+
 
 /**
  * API examples routes.
