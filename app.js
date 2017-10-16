@@ -34,7 +34,11 @@ const homeController = require('./controllers/home');
 const userController = require('./controllers/user');
 const apiController = require('./controllers/api');
 const contactController = require('./controllers/contact');
+
 const locationController = require('./controllers/location');
+
+const shoesController = require('./controllers/shoes');
+
 /**
  * API keys and Passport configuration.
  */
@@ -139,8 +143,13 @@ app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userControl
 /**
 * BigBeardShoes routes
 */
+<<<<<<< HEAD
 
 app.get('/location', locationController.getLocation);
+=======
+app.get('/shoes', shoesController.getShoes);
+
+>>>>>>> 3f843e4fa2dd407cb739474f79fe3a6f36a0be20
 
 /**
  * API examples routes.
