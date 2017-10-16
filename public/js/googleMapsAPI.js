@@ -1,14 +1,21 @@
 
-function init(){
+function init(pos_lat, pos_lng){
+
+	var pos = {
+			lat: pos_lat ,
+			lng: pos_lng
+		}
+
+
 var lat, lon, _zoom;
 
 
-
-	//default
+	//default center of france
 	lat = 46.92475 ;
 	lon = 2.0517 ;
 	_zoom = 6
 	var position_latlng = new google.maps.LatLng(lat, lon);
+
 
 	//options of the map
 	var options = {
@@ -37,17 +44,26 @@ var tMarker = [
 ]
 		//add marker
 		// tMarker = array of
-		createMarker( tMarker, map);
+		createMarker( tMarker, map, pos);
 }
 
 
 
 
-function createMarker( tab, map){
+function createMarker( tab, map, pos){
   var oLatLng, oMarker, data;
   var i, nb = tab.length;
   var contenu = "";
   var infowindow;
+alert(pos.lat); //undefined
+	if (pos.lat != undefined || pos.lng != undefined){
+		oLatLng = new google.maps.LatLng(pos.lat, pos.lng);
+		oMarker = new google.maps.Marker({
+				position : oLatLng,
+				map : map,
+		})
+	}
+
 
   for( i = 0; i < nb; i++){
     data = tab[i];
@@ -101,4 +117,13 @@ function setEventMarker( oMarker, infowindow, text){
     	// affichage InfoWindow
     	infowindow.open( this.getMap(), this);
     });
+}
+
+
+function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+	infoWindow.setPosition(pos);
+	infoWindow.setContent(browserHasGeolocation ?
+												'Error: The Geolocation service failed.' :
+												'Error: Your browser doesn\'t support geolocation.');
+	infoWindow.open(map);
 }
