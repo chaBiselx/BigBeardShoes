@@ -150,7 +150,7 @@ app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userControl
 app.get('/shoes', shoesController.getShoes);
 app.get('/location', locationController.getLocation);
 app.get('/shoes', shoesController.getShoes);
-
+app.get('/addshoes', passportConfig.isAuthenticated, shoesController.addShoes)
 
 
 /**
