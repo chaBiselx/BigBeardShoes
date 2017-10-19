@@ -9,3 +9,5 @@ exports.getShoes = (req, res) => {
     res.render('shoes', { shoes: docs });
   });
 };
+
+// to add exports.addShoes to add shoes to sell
