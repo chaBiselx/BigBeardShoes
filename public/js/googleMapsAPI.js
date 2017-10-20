@@ -55,7 +55,7 @@ function createMarker( tab, map, pos){
   var i, nb = tab.length;
   var contenu = "";
   var infowindow;
-alert(pos.lat); //undefined
+
 	if (pos.lat != undefined || pos.lng != undefined){
 		oLatLng = new google.maps.LatLng(pos.lat, pos.lng);
 		oMarker = new google.maps.Marker({
