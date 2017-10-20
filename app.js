@@ -22,10 +22,12 @@ const multer = require('multer');
 
 const upload = multer({ dest: path.join(__dirname, 'uploads') });
 
+const fs = require('fs');
+
 /**
  * Load environment variables from .env file, where API keys and passwords are configured.
  */
-dotenv.load({ path: '.env.example' });
+dotenv.load({ path: '.env' });
 
 /**
  * Controllers (route handlers).
@@ -35,6 +37,7 @@ const userController = require('./controllers/user');
 const apiController = require('./controllers/api');
 const contactController = require('./controllers/contact');
 const shoesController = require('./controllers/shoes');
+const locationController = require('./controllers/location');
 
 /**
  * API keys and Passport configuration.
@@ -50,7 +53,11 @@ const app = express();
  * Connect to MongoDB.
  */
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGODB_URI || process.env.MONGOLAB_URI);
+mongoose.connect(process.env.MONGODB_URI, {
+  useMongoClient: true,
+  ssl: true,
+  sslCA: [fs.readFileSync('./sslCert.crt')]
+});
 mongoose.connection.on('error', (err) => {
   console.error(err);
   console.log('%s MongoDB connection error. Please make sure MongoDB is running.', chalk.red('✗'));
@@ -141,6 +148,9 @@ app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userControl
 * BigBeardShoes routes
 */
 app.get('/shoes', shoesController.getShoes);
+app.get('/location', locationController.getLocation);
+app.get('/shoes', shoesController.getShoes);
+
 
 
 /**
