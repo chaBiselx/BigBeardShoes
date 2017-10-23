@@ -1,5 +1,7 @@
-.navbar.navbar-default.navbar-fixed-top
-  .container
+.navbar.navbar-default
+  .container 
+    img(src="img/beard.png" class="main_logo")
+    .title Big Beard Shoes
     .navbar-header
       button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
         span.sr-only Toggle navigation
@@ -11,6 +13,8 @@
         
         | Big Beard Shoes
     .collapse.navbar-collapse 
+
+
       ul.nav.navbar-nav
         li(class=(title === 'Home') ? 'active' : undefined)
           a(href='/') Home
@@ -18,8 +22,6 @@
           a(href='/location') Localisation
         li(class=(title === 'Shoes') ? 'active' : undefined)
           a(href='/shoes') Shoes
-        li(class=(title === 'API Examples') ? 'active' : undefined)
-          a(href='/api') API Examples
         li(class=(title === 'Contact') ? 'active' : undefined)
           a(href='/contact') Contact
         li
