@@ -1,7 +1,13 @@
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const fs = require('fs');
-const db = require('./db');
+
+var Contract = require('./Contract.js');
+var Offer = require('./Offer.js');
+var ShoeBrand = require('./ShoeBrand.js');
+var ShoeModel = require('./ShoeModel.js');
+var Shoe = require('./Shoe.js')
+var User = require('./User.js');
 
 
 
@@ -23,24 +29,29 @@ mongoose.connection.on('open', (err) => {
   // for (model in db.dbModels) {
   //   model.
   // }
-  testInsert();
+  // testInsert();
+  testGet();
 })
 
 function testInsert() {
-  let ShoeBrand = db.dbModels.ShoeBrand;
-  let ShoeModel = db.dbModels.ShoeModel;
   let brands = ['PORTWEST', 'DIADORA', 'COFRA', 'HECKEL', 'Kapriol', 'DiKE'];
   for (let i = 0; i < brands.length ; i++) {
     var shoeBrand = new ShoeBrand({
-      brand: brands[i]
+      shoeBrandName: brands[i]
     });
     shoeBrand.save();
     for (let j = 1; j <= 10; j++) {
       var shoeModel = new ShoeModel({
-        model: brands[i] + ' ' + j,
+        shoeModelName: brands[i] + ' ' + j,
         brand: shoeBrand._id
       });
       shoeModel.save();
     }
   }
+}
+
+function testGet() {
+  ShoeModel.find({}).populate('brand').exec(function(err, docs) {
+    console.log(docs);
+  });
 }

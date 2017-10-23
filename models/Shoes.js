@@ -1,8 +1,6 @@
 const mongoose = require('mongoose');
+const db = require('../db/db');
 
-const shoesSchema = new mongoose.Schema({
-  name: String
-});
+const shoesSchema = db.dbModels.Shoe;
 
-const Shoes = mongoose.model('Shoes', shoesSchema);
 module.exports = Shoes;

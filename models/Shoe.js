@@ -12,4 +12,4 @@ var ShoeSchema = new Schema({
   },
   size: [Number, Number]
 });
-module.exports = mongoose.model("ShoeModel", ShoeModelSchema);
+module.exports = mongoose.model("Shoe", ShoeSchema);

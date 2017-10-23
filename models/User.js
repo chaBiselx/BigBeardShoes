@@ -19,10 +19,14 @@ const userSchema = new mongoose.Schema({
 
   profile: {
     name: String,
+    desc: String,
     gender: String,
     location: String,
     website: String,
-    picture: String
+    picture: String,
+    shoe_size: [Number, Number],
+    coord_lng: Number,
+    coord_lat: Number
   }
 }, { timestamps: true });
 

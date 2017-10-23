@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 var OfferSchema = new Schema({
   lessor: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Lessor'
+    ref: 'User'
   },
   shoe_model: {
     type: mongoose.Schema.Types.ObjectId,
