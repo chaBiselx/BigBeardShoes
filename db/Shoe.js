@@ -1,16 +1,15 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var ContractSchema = new Schema({
-  start: Date,
-  end: Date,
-  client: {
+var ShoeSchema = new Schema({
+  model: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'User'
+    ref: 'ShoeModel'
   },
   lessor: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User'
-  }
+  },
+  size: [Number, Number]
 });
-module.exports = mongoose.model("Contract", ContractSchema);
+module.exports = mongoose.model("ShoeModel", ShoeModelSchema);
