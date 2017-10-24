@@ -35,12 +35,14 @@ var lat, lon, _zoom;
 
 
 var tMarker = [
+	//for each
 	{
-		lat : 45.833608,
-		lon : 6.865089,
-		title : "BigBeardShoes",
-		text : "Bienvenue dans le magasin au coeur du Mont-Blanc"
+		lat : 45.833608, //UserSchema.coord_lat,
+		lon : 6.865089,	//UserSchema.coord_lng,
+		title : "BigBeardShoes", //UserSchema.name,
+		text : "Bienvenue dans le magasin au coeur du Mont-Blanc" //UserSchema.descr
 	}
+	//}
 ]
 		//add marker
 		// tMarker = array of
