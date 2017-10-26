@@ -3,9 +3,6 @@ var Schema = mongoose.Schema;
 
 var ShoeModelSchema = new Schema({
   shoeModelName: String,
-  brand: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'ShoeBrand'
-  }
+  brand: String
 });
 module.exports = mongoose.model("ShoeModel", ShoeModelSchema);
