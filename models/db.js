@@ -7,6 +7,7 @@ dbModels.Contract = require('./Contract.js');
 dbModels.Offer = require('./Offer.js');
 dbModels.ShoeBrand = require('./ShoeBrand.js');
 dbModels.ShoeModel = require('./ShoeModel.js');
+dbModels.Shoe = require('./Shoe.js');
 dbModels.User = require('./User.js');
 
 exports.dbModels = dbModels;

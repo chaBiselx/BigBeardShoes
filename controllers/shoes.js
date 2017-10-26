@@ -2,7 +2,9 @@
  * GET /shoes
  * List all shoes.
  */
-const Shoes = require('../models/Shoes.js');
+const ShoeBrand = require('../models/ShoeBrand.js');
+const ShoeModel = require('../models/ShoeModel.js');
+// TODO currently only list the models, not the actual shoes
 
 
 
