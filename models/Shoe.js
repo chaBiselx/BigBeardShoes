@@ -10,6 +10,6 @@ var ShoeSchema = new Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User'
   },
-  size: [Number, Number]
+  size: Number
 });
 module.exports = mongoose.model("Shoe", ShoeSchema);
