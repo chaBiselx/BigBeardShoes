@@ -1,9 +1,25 @@
 extends layout
 
 block content
-  .page-header
-    h3 All Shoes
+	.page-header
+	h3 All Shoes
 
-  ul
-    for shoe in shoes
-      li= shoe.shoeModelName
+	.row
+
+	for shoe in shoes
+		.col-sm-4
+
+			h2 = shoe.name
+			img(src="shoe.img")
+			p Size = shoe.size
+			br 
+			Brand = shoe.brand
+			br
+			Price = shoe.price
+			br 
+			a.btn.btn-default(href='#', role='button') View details »
+
+			p
+
+
+
