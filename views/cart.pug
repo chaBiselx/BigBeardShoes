@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  .page-header
+    h3 Shopping Cart
+
+  ul
+    for shoe in cart
+      li= shoe.name

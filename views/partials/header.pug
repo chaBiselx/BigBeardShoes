@@ -35,6 +35,8 @@
         else
           li(class=(title === 'Sell shoes') ? 'active' : undefined)
             a(href='/addshoes') Sell Shoes
+          li(class=(title === 'Shopping Cart') ? 'active' : undefined)
+            a(href='/cart') Shopping Cart
           li.dropdown(class=(title === 'Account Management') ? 'active' : undefined)
             a.dropdown-toggle(href='#', data-toggle='dropdown')
           
