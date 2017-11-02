@@ -37,6 +37,7 @@ const userController = require('./controllers/user');
 const contactController = require('./controllers/contact');
 const shoesController = require('./controllers/shoes');
 const locationController = require('./controllers/location');
+const buyController = require('./controllers/buy');
 /**
  * API keys and Passport configuration.
  */
@@ -151,7 +152,7 @@ app.get('/shoes', shoesController.getShoes);
 app.get('/location', locationController.getLocation);
 app.get('/shoes', shoesController.getShoes);
 app.get('/addshoes', passportConfig.isAuthenticated, shoesController.addShoes)
-
+app.get('/buy', buyController.getBuy);
 
 /**
  * OAuth authentication routes. (Sign in)
