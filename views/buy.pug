@@ -3,49 +3,53 @@ block content
   h1 Commande
   p.lead Commande
   hr
-.resume
-  h3 Liste des résumés de la commande
-  hr
-.generaliste
-  h3 Généralité
-  .nom
-    label nom 
-    input()
-  .prenom
-    label prénom 
-    input()
-  .email
-    label Adress email 
-    input()
-  .confemail
-    label Confirmation email 
-    input()
-  hr
-.coordonnees
-  h3 Coordonnées
-  .adresse1
-    label adresse 1
-    input()
-  .adress2
-    label adresse 2
-    input()
-  .postcode
-    label code postal
-    input()
-  .ville 
-    label ville 
-    input()
-  hr
-.paiement
-  h3 paiement
-  .carte
-    label carte
-    input()
-  .date
-    label date de validité
-    p inserer date
-  .crypto
-    label cryptogramme
-    input()
-
+form
+  .resume
+    h3 Liste des résumés de la commande
+    hr
+  .generaliste
+    h3 Généralité
+    .nom
+      label nom 
+      input(type="text")
+    .prenom
+      label prénom 
+      input(type="text")
+    .tel 
+      label téléphone
+      input(type="tel")
+    .email
+      label Adress email 
+      input(type="email")
+    .confemail
+      label Confirmation email 
+      input(type="email")
+    hr
+  .coordonnees
+    h3 Coordonnées
+    .adresse1
+      label adresse 1
+      input(type="text")
+    .adress2
+      label adresse 2
+      input(type="text")
+    .postcode
+      label code postal 
+      input(type="text" )
+    .ville 
+      label ville 
+      input(type="text")
+    hr
+  .paiement
+    h3 paiement
+    .carte
+      label carte
+      input(type="text")
+    .date
+      label date de validité
+      input(type="date" )
+    .crypto
+      label cryptogramme
+      input(type="text" minlength="3" maxlength="3")
+  input(type="reset")
   hr
