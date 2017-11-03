@@ -11,45 +11,46 @@ form
     h3 Généralité
     .nom
       label nom 
-      input(type="text")
+      input(type="text" required="required")
     .prenom
       label prénom 
-      input(type="text")
+      input(type="text" required="required" minlength="1")
     .tel 
       label téléphone
       input(type="tel")
     .email
       label Adress email 
-      input(type="email")
+      input(type="email" required="required" minlength="3")
     .confemail
       label Confirmation email 
-      input(type="email")
+      input(type="email" required="required" minlength="3")
     hr
   .coordonnees
     h3 Coordonnées
     .adresse1
       label adresse 1
-      input(type="text")
+      input(type="text" required="required")
     .adress2
       label adresse 2
       input(type="text")
     .postcode
       label code postal 
-      input(type="text" )
+      input(type="text" required="required")
     .ville 
       label ville 
-      input(type="text")
+      input(type="text" required="required")
     hr
   .paiement
     h3 paiement
     .carte
       label carte
-      input(type="text")
+      input(type="text" required="required" minlength="16" maxlength="16")
     .date
       label date de validité
-      input(type="date" )
+      input(type="date" required="required" )
     .crypto
       label cryptogramme
-      input(type="text" minlength="3" maxlength="3")
+      input(type="text" required="required" minlength="3" maxlength="3")
   input(type="reset")
+  
   hr
