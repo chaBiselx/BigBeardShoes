@@ -31,20 +31,36 @@ var lat, lon, _zoom;
 		//search the markup for insertion
     var map = new google.maps.Map(document.getElementById("ggmaps_map"), options);
 
+	//*************************
+	// à suppr
+	var UserSchema = {
+		name : "Tête Biselx",
+		descr : "je ne sais pas quoi dire",
+		coord_lat : 45.9842725 ,
+		coord_lng : 7.0294034
+	};
 
 
+	//*************************
 
-var tMarker = [
-	{
-		lat : 45.833608,
-		lon : 6.865089,
-		title : "BigBeardShoes",
-		text : "Bienvenue dans le magasin au coeur du Mont-Blanc"
-	}
-]
-		//add marker
-		// tMarker = array of
-		createMarker( tMarker, map, pos);
+
+	var tMarker = [];
+
+
+	//for UserSchema in User {
+		if (UserSchema.coord_lat != undefined || UserSchema.coord_lng != undefined ){
+			tMarker.push ({
+				lat : UserSchema.coord_lat,
+				lon : UserSchema.coord_lng,
+				title : UserSchema.name,
+				text : UserSchema.descr
+			});
+		}
+	//}
+	//end list marker
+
+	// tMarker = array of
+	createMarker( tMarker, map, pos);
 }
 
 
